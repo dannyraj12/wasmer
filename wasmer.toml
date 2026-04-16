@@ -1,0 +1,15 @@
+[package]
+name = "php-proxy"
+version = "0.1.0"
+
+[[module]]
+name = "app"
+source = "https://repo.wasmer.io/php/php:8.2"
+
+[command]
+name = "run"
+module = "app"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["index.php"]
